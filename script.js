@@ -31,7 +31,7 @@ async function train(model, data) {
 	const container = { name: 'Model Training', styles: { height: '1000px' } };
 	const fitCallbacks = tfvis.show.fitCallbacks(container, metrics);
   
-	const BATCH_SIZE = 32;
+	const BATCH_SIZE = 64;
 	const TRAIN_DATA_SIZE = 5500;
 	const TEST_DATA_SIZE = 1000;
 
@@ -54,25 +54,36 @@ async function train(model, data) {
 	return model.fit(trainXs, trainYs, {
 		batchSize: BATCH_SIZE,
 		validationData: [testXs, testYs],
-		epochs: 5,
+		epochs: 1,
 		shuffle: true,
 		callbacks: fitCallbacks
 	});
 }
 
 function setPosition(e){
+	var rect = canvas.getBoundingClientRect();
 	pos.x = e.clientX-100;
 	pos.y = e.clientY-100;
 }
+
+function setPositionTouch(e) {
+    var rect = canvas.getBoundingClientRect();
+    pos.x = e.touches[0].clientX - rect.left;
+    pos.y = e.touches[0].clientY - rect.top;
+}
     
 function draw(e) {
-	if(e.buttons!=1) return;
+	if(e.buttons!=1 && e.type != 'touchmove') return;
 	ctx.beginPath();
 	ctx.lineWidth = 24;
 	ctx.lineCap = 'round';
 	ctx.strokeStyle = 'white';
 	ctx.moveTo(pos.x, pos.y);
-	setPosition(e);
+	if (e.type == 'touchmove') {
+        setPositionTouch(e);
+    } else {
+        setPosition(e);
+    }
 	ctx.lineTo(pos.x, pos.y);
 	ctx.stroke();
 	rawImage.src = canvas.toDataURL('image/png');
@@ -102,12 +113,14 @@ function init() {
 	canvas.addEventListener("mousemove", draw);
 	canvas.addEventListener("mousedown", setPosition);
 	canvas.addEventListener("mouseenter", setPosition);
+	canvas.addEventListener("touchmove", draw);
+    canvas.addEventListener("touchstart", setPositionTouch);
+    canvas.addEventListener("touchenter", setPositionTouch);
 	saveButton = document.getElementById('sb');
 	saveButton.addEventListener("click", save);
 	clearButton = document.getElementById('cb');
 	clearButton.addEventListener("click", erase);
 }
-
 
 async function run() {  
 	const data = new MnistData();
