@@ -3,7 +3,7 @@ var canvas, ctx, saveButton, clearButton;
 var pos = {x:0, y:0};
 var rawImage;
 var model;
-const n_epochs = 2;
+const n_epochs = 5;
 	
 function getModel() {
 	model = tf.sequential();
