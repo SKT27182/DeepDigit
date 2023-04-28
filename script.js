@@ -3,7 +3,7 @@ var canvas, ctx, saveButton, clearButton;
 var pos = {x:0, y:0};
 var rawImage;
 var model;
-const n_epochs = 1;
+const n_epochs = 2;
 	
 function getModel() {
 	model = tf.sequential();
@@ -32,7 +32,7 @@ async function train(model, data) {
 	const container = { name: 'Model Training', styles: { height: '1000px' } };
 	const fitCallbacks = tfvis.show.fitCallbacks(container, metrics);
   
-	const BATCH_SIZE = 32;
+	const BATCH_SIZE = 64;
 	const TRAIN_DATA_SIZE = 5500;
 	const TEST_DATA_SIZE = 1000;
 
