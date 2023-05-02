@@ -68,7 +68,7 @@ async function train(model, data, n_epochs, batch_size) {
 function setPosition(e) {
 	var rect = canvas.getBoundingClientRect();
 	pos.x = e.clientX - 100;
-	pos.y = e.clientY - 250;
+	pos.y = e.clientY - 350;
 }
 
 function setPositionTouch(e) {

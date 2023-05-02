@@ -60,7 +60,7 @@
 }
 
 label {
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 
 
@@ -75,4 +75,15 @@ label {
         width: 100%;
         margin-bottom: 20px;
     }
+}
+
+#intro {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 40%;
+    max-width: 1000px; /* adjust the max width as per your requirement */
+    text-align: left;
+    word-wrap: break-word;
 }

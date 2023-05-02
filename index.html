@@ -19,6 +19,9 @@
     </div>
 
     <div id="info">
+        <div id="intro">
+            <h3>Draw a digit from 0 to 9 in the box below and click on classify to see the prediction.</h4>
+        </div>
         <canvas id="canvas" width="280" height="280"
             style="position:absolute;top:350;left:100;border:8px solid;"></canvas>
         <img id="canvasimg" style="position:absolute;top:10%;left:52%;width:280;height:280;display:none;">
@@ -28,6 +31,7 @@
         <input type="button" class="button" value="Train" id="train" size="48"
             style="position:absolute;top:650;left:320;">
     </div>
+    
 
     <!-- Input box to take the input  epochs and batch size -->
     <div id="input">
@@ -54,10 +58,6 @@
     </div>
 
 
-
-    <div id="intro">
-        <h3>Draw a digit from 0 to 9 in the box below and click on classify to see the prediction.</h4>
-    </div>
 
     <div id="vizualize">
         <script src="data.js" type="module"></script>
