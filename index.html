@@ -1,19 +1,68 @@
 <html>
+
 <head>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@latest"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.1.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@latest"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+
 </head>
+
 <body>
-    <h1>DeepDigit!</h1>
-    <h2>Hand Written Digit Classifier</h2>
-    <canvas id="canvas" width="280" height="280" style="position:absolute;top:100;left:100;border:8px solid;"></canvas>
-    <img id="canvasimg" style="position:absolute;top:10%;left:52%;width:280;height:280;display:none;">
-    <input type="button" value="classify" id="sb" size="48" style="position:absolute;top:400;left:100;">
-    <input type="button" value="clear" id="cb" size="23" style="position:absolute;top:400;left:180;">
-    <script src="data.js" type="module"></script>
-    <script src="script.js" type="module"></script>
+    <div id="headings">
+        <h1>DeepDigit!</h1>
+        <h2>Hand Written Digit Classifier</h2>
+    </div>
+
+    <div id="info">
+        <canvas id="canvas" width="280" height="280"
+            style="position:absolute;top:350;left:100;border:8px solid;"></canvas>
+        <img id="canvasimg" style="position:absolute;top:10%;left:52%;width:280;height:280;display:none;">
+        <input type="button" class="button" value="classify" id="sb" size="48"
+            style="position:absolute;top:650;left:90;">
+        <input type="button" class="button" value="clear" id="cb" size="23" style="position:absolute;top:650;left:215;">
+        <input type="button" class="button" value="Train" id="train" size="48"
+            style="position:absolute;top:650;left:320;">
+    </div>
+
+    <!-- Input box to take the input  epochs and batch size -->
+    <div id="input">
+        <div class="input-container">
+            <label for="epochs">Epochs:</label>
+            <input type="number" id="epochs" name="epochs" min="1" max="100" value="5">
+        </div>
+        <div class="input-container">
+            <label for="batch_size">Batch Size:</label>
+            <input type="number" id="batch_size" name="batch_size" min="1" max="100" value="64">
+        </div>
+        <div class="input-container">
+            <label for="learning_rate">Learning Rate:</label>
+            <input type="number" id="learning_rate" name="learning_rate" min="0.0001" max="0.5" step="0.0001"
+                value="0.001">
+        </div>
+        <div class="input-container">
+            <label for="model">Model:</label>
+            <select name="model" id="model_type">
+                <option value="pre_trained" selected>Pre-Trained</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+    </div>
+
+
+
+    <div id="intro">
+        <h3>Draw a digit from 0 to 9 in the box below and click on classify to see the prediction.</h4>
+    </div>
+
+    <div id="vizualize">
+        <script src="data.js" type="module"></script>
+        <script src="script.js" type="module"></script>
+    </div>
 </body>
+
 </html>

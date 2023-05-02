@@ -1,0 +1,78 @@
+#input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-right: 40%;
+}
+
+#input>* {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+#input label {
+    font-size: 16px;
+}
+
+#input input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#input select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.button {
+    flex: 1 1 100%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    #input>* {
+        flex-basis: 100%;
+    }
+}
+
+
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #input {
+        margin-right: 0;
+    }
+
+    #input label,
+    #input input,
+    #input select {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

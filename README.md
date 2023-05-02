@@ -11,6 +11,8 @@
 
 # Future Plans
 
-### Future plans for `DeepDigit` include enabling customization of certain parameters of the neural network architecture. This will allow for the training and testing of custom models using the application.
+###  <input type="checkbox" disabled checked/> Future plans for `DeepDigit` include enabling customization of certain parameters of the neural network architecture. This will allow for the training and testing of custom models using the application.
 
-### In addition to custom model training, I am working on integrating pre-trained models into `DeepDigit`. This will enhance the application's digit classification capabilities and provide an additional tool for users to leverage.
+### <input type="checkbox" disabled checked/> In addition to custom model training, I am working on integrating pre-trained models into `DeepDigit`. This will enhance the application's digit classification capabilities and provide an additional tool for users to leverage.
+
+### <input type="checkbox" disabled checked/>I am also working on making "DeepDigit" more mobile-friendly. While the current version allows for training on mobile, I plan to implement the ability to draw digits on the canvas using mobile devices in the future.
