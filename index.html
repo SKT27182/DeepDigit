@@ -23,15 +23,17 @@
             <h3>Draw a digit from 0 to 9 in the box below and click on classify to see the prediction.</h4>
         </div>
         <canvas id="canvas" width="280" height="280"
-            style="position:absolute;top:350;left:100;border:8px solid;"></canvas>
-        <img id="canvasimg" style="position:absolute;top:10%;left:52%;width:280;height:280;display:none;">
-        <input type="button" class="button" value="classify" id="sb" size="48"
-            style="position:absolute;top:650;left:90;">
-        <input type="button" class="button" value="clear" id="cb" size="23" style="position:absolute;top:650;left:215;">
-        <input type="button" class="button" value="Train" id="train" size="48"
-            style="position:absolute;top:650;left:320;">
+            style="position:relative;top:10%;left:80;border:8px solid;"></canvas>
+        <img id="canvasimg" style="position:relative;top:10%;left:52%;width:280;height:280;display:none;">
+        <div>
+            <input type="button" class="button" value="classify" id="sb" size="48"
+                style="position:relative;top:10%;left:90;">
+            <input type="button" class="button" value="clear" id="cb" size="23"
+                style="position:relative;top:10%;left:215;">
+
+        </div>
     </div>
-    
+
 
     <!-- Input box to take the input  epochs and batch size -->
     <div id="input">
@@ -51,12 +53,16 @@
         <div class="input-container">
             <label for="model">Model:</label>
             <select name="model" id="model_type">
-                <option value="pre_trained" selected>Pre-Trained</option>
+                <option value="pre_trained">Pre-Trained</option>
                 <option value="custom">Custom</option>
             </select>
         </div>
     </div>
 
+    <div>
+        <input type="button" class="button" value="Train" id="train" size="48"
+            style="position:relative;top:5% ;left:100;">
+    </div>
 
 
     <div id="vizualize">
