@@ -67,14 +67,16 @@ async function train(model, data, n_epochs, batch_size) {
 
 function setPosition(e) {
 	var rect = canvas.getBoundingClientRect();
-	pos.x = e.clientX - 100;
-	pos.y = e.clientY - 350;
+	var offsetY = window.innerHeight * 0.01; // 10% offset from top
+	pos.x = e.clientX - rect.left;
+	pos.y = e.clientY - (rect.top - offsetY);
 }
 
 function setPositionTouch(e) {
 	var rect = canvas.getBoundingClientRect();
+	var offsetY = window.innerHeight * 0.01; // 10% offset from top
 	pos.x = e.touches[0].clientX - rect.left;
-	pos.y = e.touches[0].clientY - rect.top;
+	pos.y = e.touches[0].clientY - (rect.top - offsetY);
 }
 
 function draw(e) {
